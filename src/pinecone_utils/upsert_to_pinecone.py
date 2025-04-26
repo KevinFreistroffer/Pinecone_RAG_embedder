@@ -17,22 +17,10 @@ def upsert_to_pinecone(dataset_file_name, records, namespace):
     print("Pinecone.upserting records...", namespace)
 
     try:
-        # records = []
-        # for index, (original_text, embeded_text) in enumerate(zip(text_content, embeded_text_content)):
-        #     record = {
-        #         "id": str(index),
-        #         "values": embeded_text,
-        #         "metadata": {
-        #             "original_text": original_text
-        #         }
-        #     }
-        #     records.append(record)
-
         if records is None or len(records) == 0:
             raise ValueError("Records array is empty.")
 
-        # Batch size to stay under 2MB limit
-        batch_size = 100
+        batch_size = 200
         for i in range(0, len(records), batch_size):
             batch = records[i : i + batch_size]
             print(
