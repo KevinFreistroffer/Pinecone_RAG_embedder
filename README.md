@@ -19,9 +19,9 @@ Orchestration & Monitoring: Wire steps with Step Functions / Logic Apps / Cloud 
 ```python
 {
   "id": 1,  
-  "values": ["A girl coughs."], 
+  "values": ["cough cough"], 
   "metadata": { 
-    "original_text": "A girl coughs"  
+    "original_text": "cough cough"  
   } 
 }
 ```
