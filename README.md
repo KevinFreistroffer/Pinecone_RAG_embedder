@@ -16,7 +16,7 @@ Orchestration & Monitoring: Wire steps with Step Functions / Logic Apps / Cloud 
 ### This features reading and extracting text from a PDF, encode the extracted text and upsert them with metadata, to a Pinecone vector database.
 
 # Example record:
-`python
+`
 {
   "id": 1,  
   "values": ["A girl coughs."], 
