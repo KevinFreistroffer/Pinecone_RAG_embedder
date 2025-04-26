@@ -30,6 +30,19 @@ class PDFProcessor:
         reader = PdfReader(pdf_path)
         print("PDF reader obtained successfully")
         return reader
+    
+    def get_text_content(self):
+        print("Retrieving text content...")
+        return self.text_content
+
+    def get_embeded_text_content(self):
+        print("Retrieving embedded text content...")
+        return self.embedded_text_content
+
+    def get_pinecone_records(self):
+        print("Retrieving Pinecone records...")
+        return self.pinecone_records
+
 
     def extract_and_store_text_content(self):
         print("Starting text extraction from PDF...")
@@ -52,18 +65,6 @@ class PDFProcessor:
         print("Encoding text content...")
         self.embedded_text_content = self.model.encode(text_content)
         print("Embedded text content generated successfully")
-
-    def get_text_content(self):
-        print("Retrieving text content...")
-        return self.text_content
-
-    def get_embeded_text_content(self):
-        print("Retrieving embedded text content...")
-        return self.embedded_text_content
-
-    def get_pinecone_records(self):
-        print("Retrieving Pinecone records...")
-        return self.pinecone_records
 
     def prepare_records_for_upsert(self):
         print("Preparing records for Pinecone upsert...")
