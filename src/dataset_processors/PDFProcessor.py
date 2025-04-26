@@ -3,7 +3,6 @@ import os
 from PyPDF2 import PdfReader
 
 
-# TODO implement a BaseProcessor requiring these method names?
 class PDFProcessor:
     def __init__(self, file_name):
         print("Initializing PDFProcessor...")
