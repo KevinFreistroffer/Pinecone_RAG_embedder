@@ -13,9 +13,9 @@ Vector DB Integration: From that endpoint, call Pinecone (via its client SDK) to
 
 Orchestration & Monitoring: Wire steps with Step Functions / Logic Apps / Cloud Workflows and monitor with CloudWatch / Monitor / Stackdriver.
 
-# This features reading and extracting text from a PDF, encode the extracted text and upsert them with metadata, to a Pinecone vector database.
+### This features reading and extracting text from a PDF, encode the extracted text and upsert them with metadata, to a Pinecone vector database.
 
-##Example record:
+# Example record:
 `python
 {
   "id": 1,
