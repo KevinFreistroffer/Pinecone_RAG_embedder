@@ -54,37 +54,6 @@ class PDFProcessor(_BaseProcessor):
         print("Encoding text content...")
         self.embedded_text_content = self.model.encode(text_content)
         print("Embedded text content generated successfully")
-
-        # if len(self.embedded_text_content) == 0:
-        #     print("No embeddings generated")
-        #     raise ValueError("No embeddings to upsert")
-
-        # print("Preparing embeddings for upsert...")
-        # embeddings = []
-        
-        # for index, (original_text, embedding) in enumerate(zip(text_content, self.embedded_text_content)):
-        #     record = {
-        #         "id": str(index),
-        #         "values": embedding,
-        #         "metadata": {
-        #             "original_text": original_text
-        #         }
-        #     }
-        #     embeddings.append(record)
-
-        # if len(embeddings) == 0:
-        #     print("No records prepared for upsert")
-        #     raise ValueError("No records to upsert")
-        
-        # print(f"Upserting {len(embeddings)} records to Pinecone...")
-        # result = upsert_to_pinecone(
-        #     dataset_file_name=self.file_name, 
-        #     text_content=text_content,
-        #     embeded_text_content=self.embedded_text_content,
-        #     namespace=self.file_name
-        # )
-        # print("Upsert completed successfully")
-        # return result
     
     def get_text_content(self):
         print("Retrieving text content...")
