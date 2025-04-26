@@ -1,4 +1,6 @@
-# .env
+# RAG with SentenceTransformers and Pinecone.
+
+## .env
 PINECONE_API_KEY=123
 
 # Cloud Services ideas:
