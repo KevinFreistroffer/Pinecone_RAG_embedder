@@ -2,9 +2,6 @@ from sentence_transformers import SentenceTransformer
 import os
 from PyPDF2 import PdfReader
 
-# from DatasetProcessors._BaseProcessor import _BaseProcessor
-from pinecone_utils.upsert_to_pinecone import upsert_to_pinecone
-
 # TODO implement a BaseProcessor requiring these method names?
 class PDFProcessor:
     def __init__(self, file_name):
