@@ -9,14 +9,14 @@ Text Extraction: Trigger PDF→text extraction via serverless compute calling Te
 
 Embedding Service: Host your SentenceTransformers model as a managed inference endpoint (SageMaker / Azure ML / Vertex AI).
 
-Vector DB Integration: From that endpoint, call Pinecone (via its client SDK) to upsert embeddings—Pinecone is available in each cloud’s marketplace or via public API.
+Vector DB Integration: From that endpoint, call Pinecone (via its client SDK) to upsert embeddings—Pinecone is available in each cloud's marketplace or via public API.
 
 Orchestration & Monitoring: Wire steps with Step Functions / Logic Apps / Cloud Workflows and monitor with CloudWatch / Monitor / Stackdriver.
 
 ### This features reading and extracting text from a PDF, encode the extracted text and upsert them with metadata, to a Pinecone vector database.
 
 # Example record:
-`
+```python
 {
   "id": 1,  
   "values": ["A girl coughs."], 
@@ -24,4 +24,4 @@ Orchestration & Monitoring: Wire steps with Step Functions / Logic Apps / Cloud 
     "original_text": "A girl coughs"  
   } 
 }
-`
+```
