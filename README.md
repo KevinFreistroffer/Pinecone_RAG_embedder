@@ -1,3 +1,6 @@
+# .env
+PINECONE_API_KEY=123
+
 # Cloud services ideas:
 
 Ingestion & Storage: Upload PDFs into object storage (S3 / Blob Storage / GCS).
