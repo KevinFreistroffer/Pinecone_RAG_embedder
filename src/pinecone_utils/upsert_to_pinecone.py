@@ -12,6 +12,7 @@ if not PINECONE_API_KEY:
 pc = Pinecone(api_key=PINECONE_API_KEY)
 pinecone_index = pc.Index("rag-768")
 
+
 def upsert_to_pinecone(dataset_file_name, records, namespace):
     print("Pinecone.upserting records...", namespace)
 
@@ -26,7 +27,7 @@ def upsert_to_pinecone(dataset_file_name, records, namespace):
         #         }
         #     }
         #     records.append(record)
-  
+
         if records is None or len(records) == 0:
             raise ValueError("Records array is empty.")
 

@@ -1,11 +1,12 @@
 from sentence_transformers import SentenceTransformer
 import os
 from PyPDF2 import PdfReader
+
 # from DatasetProcessors._BaseProcessor import _BaseProcessor
 from pinecone_utils.upsert_to_pinecone import upsert_to_pinecone
 
-
-class PDFProcessor():
+# TODO implement a BaseProcessor requiring these method names?
+class PDFProcessor:
     def __init__(self, file_name):
         print("Initializing PDFProcessor...")
         if not file_name:
@@ -54,19 +55,19 @@ class PDFProcessor():
         print("Encoding text content...")
         self.embedded_text_content = self.model.encode(text_content)
         print("Embedded text content generated successfully")
-    
+
     def get_text_content(self):
         print("Retrieving text content...")
         return self.text_content
-    
+
     def get_embeded_text_content(self):
         print("Retrieving embedded text content...")
         return self.embedded_text_content
-    
+
     def get_pinecone_records(self):
         print("Retrieving Pinecone records...")
         return self.pinecone_records
-    
+
     def prepare_records_for_upsert(self):
         print("Preparing records for Pinecone upsert...")
 
@@ -76,19 +77,19 @@ class PDFProcessor():
 
         print("Structuring embeddings for upsert...")
         self.pinecone_records = []
-        
-        for index, (original_text, embedding) in enumerate(zip(self.text_content, self.embedded_text_content)):
+
+        for index, (original_text, embedding) in enumerate(
+            zip(self.text_content, self.embedded_text_content)
+        ):
             record = {
                 "id": str(index),
                 "values": embedding,
-                "metadata": {
-                    "original_text": original_text
-                }
+                "metadata": {"original_text": original_text},
             }
             self.pinecone_records.append(record)
-        
+
         print(f"Prepared {len(self.pinecone_records)} records for Pinecone upsert")
-    
+
     def run_process(self):
         print("Starting PDF processing pipeline...")
         self.extract_and_store_text_content()
