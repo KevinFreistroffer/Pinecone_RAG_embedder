@@ -18,10 +18,10 @@ Orchestration & Monitoring: Wire steps with Step Functions / Logic Apps / Cloud 
 # Example record:
 `python
 {
-  "id": 1,
-  "values": ["A girl coughs."],
-  "metadata": {
-    "original_text": "A girl coughs"
-  }
+  "id": 1,  
+  "values": ["A girl coughs."], 
+  "metadata": { 
+    "original_text": "A girl coughs"  
+  } 
 }
 `
